@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">PMR1</string>
+    <string name="hello_pmr">Hello PMR !</string>
+    <string name="nom">Nom :</string>
 </resources>
