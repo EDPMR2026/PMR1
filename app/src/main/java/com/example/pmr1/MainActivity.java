@@ -1,17 +1,13 @@
 package com.example.pmr1;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
-
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -50,6 +46,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             msg ="Il faut entrer votre pseudo";
         } else {
             msg = "click sur OK !";
+            // changer d'activité
+            Intent versAct2 = new Intent(MainActivity.this,MainActivity2.class);
+            Bundle bdl = new Bundle();
+            bdl.putString("pseudo",inputPseudo.getText().toString());
+            versAct2.putExtras(bdl);
+
+
+
+            startActivity(versAct2);
+
         }
         Toast myToast = Toast.makeText(this,msg,Toast.LENGTH_LONG);
         myToast.show();
